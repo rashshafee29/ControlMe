@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "535793964614",
+    "firebase_url": "https://learning-112da.firebaseio.com",
+    "project_id": "learning-112da",
+    "storage_bucket": "learning-112da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535793964614:android:1ce4a557130f14da",
+        "android_client_info": {
+          "package_name": "com.example.rashidalshafee.controlme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "535793964614-edhcoulkmemo2nhrmir52tr67ahbc1tk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBY8KmMYN-MdifDqU_DBsW74N7kTOxmz_I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
