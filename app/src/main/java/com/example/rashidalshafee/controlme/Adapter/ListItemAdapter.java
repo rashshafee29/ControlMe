@@ -3,12 +3,16 @@ package com.example.rashidalshafee.controlme.Adapter;
 import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.RecyclerView;
 import android.view.ContextMenu;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.rashidalshafee.controlme.MainActivity;
+import com.example.rashidalshafee.controlme.Model.ToDo;
 import com.example.rashidalshafee.controlme.R;
+
+import java.util.List;
 
 /**
  * Created by Rashid Al Shafee on 4/1/2018.
@@ -49,18 +53,41 @@ public class ListItemAdapter extends RecyclerView.Adapter<ListItemViewHolder>{
     MainActivity mainActivity;
     List<ToDo> toDoList;
 
+    public ListItemAdapter(MainActivity mainActivity, List<ToDo> toDoList) {
+        this.mainActivity = mainActivity;
+        this.toDoList = toDoList;
+    }
+
     @Override
     public ListItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+        LayoutInflater inflater = LayoutInflater.from(mainActivity.getBaseContext());
+        View view = inflater.inflate(R.layout.list_lay,parent,false);
+        return new ListItemViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ListItemViewHolder holder, int position) {
 
+        holder.item_title.setText(toDoList.get(position).getTitle());
+        holder.item_description.setText(toDoList.get(position).getDescription());
+
+        holder.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onClick(View view, int position, boolean isLongClick) {
+                mainActivity.title.setText(toDoList.get(position).getTitle());
+                mainActivity.description.setText(toDoList.get(position).getDescription());
+                mainActivity.isUpdate = true;
+
+                mainActivity.idUpdate = toDoList.get(position).getId();
+
+            }
+        });
+
+
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return toDoList.size();
     }
 }
